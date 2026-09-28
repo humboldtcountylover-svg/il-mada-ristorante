@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il MaDa Ristorante Beachlife | Marina di Carrara</title>
+    <meta name="description" content="Esperienza culinaria sul mare a Marina di Carrara. Specialità di pesce, paella tradizionale e pizzeria con forno a legna guidata da Davide e Mauro.">
+    <style>
+        :root {
+            --navy: #0F2027;
+            --teal: #203A43;
+            --gold: #C5A880;
+            --gold-light: #E5D5C0;
+            --bg-light: #FAF9F6;
+            --text-dark: #2F3E46;
+            --white: #FFFFFF;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Playfair Display', 'Didot', 'Georgia', serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        
+        /* Hero Section */
+        header { 
+            height: 100vh;
+            background: linear-gradient(rgba(15, 32, 39, 0.65), rgba(32, 58, 67, 0.5)), 
+                        url('https://unsplash.com') no-repeat center center/cover; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+        header span { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 6px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 15px; }
+        header h1 { font-size: 4.5rem; font-weight: 400; letter-spacing: 4px; margin-bottom: 20px; line-height: 1.1; }
+        header p { font-size: 1.2rem; font-style: italic; max-width: 600px; margin-bottom: 40px; font-family: 'Georgia', serif; color: rgba(255,255,255,0.9); }
+        
+        .btn-gold { 
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            padding: 16px 35px; 
+            background: transparent; 
+            color: var(--white); 
+            border: 1px solid var(--gold);
+            text-decoration: none; 
+            transition: all 0.4s ease;
+        }
+        .btn-gold:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); cursor: pointer; }
+
+        /* Story & Philosophy Section */
+        .story-section { padding: 100px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .story-section h2 { font-size: 2.2rem; color: var(--navy); font-weight: 400; margin-bottom: 30px; letter-spacing: 1px; }
+        .story-section p { font-size: 1.1rem; color: #555; margin-bottom: 20px; font-family: 'Georgia', serif; }
+        .divider { width: 60px; height: 1px; background: var(--gold); margin: 30px auto; }
+
+        /* Signature Menu Preview */
+        .menu-preview { background-color: var(--white); padding: 100px 20px; }
+        .section-title { text-align: center; font-size: 2.5rem; color: var(--navy); margin-bottom: 60px; font-weight: 400; letter-spacing: 2px; }
+        .menu-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; }
+        .menu-category h3 { font-size: 1.5rem; color: var(--gold); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 25px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; }
+        .menu-item { margin-bottom: 25px; }
+        .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+        .menu-item-name { font-size: 1.15rem; color: var(--navy); font-weight: bold; }
+        .menu-item-dots { flex-grow: 1; border-bottom: 1px dotted #ccc; margin: 0 10px; }
+        .menu-item-price { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: var(--text-dark); }
+        .menu-item-desc { font-size: 0.95rem; color: #666; font-style: italic; font-family: 'Georgia', serif; }
+
+        /* Info & Contacts Section */
+        .info-section { background: linear-gradient(to right, var(--navy), var(--teal)); color: var(--white); padding: 90px 20px; }
+        .info-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .info-box h4 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        .info-box p { font-family: 'Georgia', serif; color: rgba(255,255,255,0.8); font-size: 1.05rem; }
+        .info-box a { color: var(--white); text-decoration: none; border-bottom: 1px dashed var(--gold); transition: 0.3s; }
+        .info-box a:hover { color: var(--gold); }
+
+        footer { background: #081216; color: rgba(255,255,255,0.4); text-align: center; padding: 30px 20px; font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 1px; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.8rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <span>Benvenuti sul Mare</span>
+        <h1>IL MADA</h1>
+        <p>Ristorante Beachlife & Pizzeria d'Autore a Marina di Carrara</p>
+        <a href="tel:+393297761212" class="btn-gold">Riserva un tavolo</a>
+    </header>
+
+    <section class="story-section">
+        <h2>L'Incontro tra Mare, Passione e Cucina</h2>
+        <div class="divider"></div>
+        <p>Ospitato nella splendida cornice del <em>Bagno Nuova Italia</em>, Il MaDa nasce dall'energia sinergica di Davide, sommelier attento, e Mauro, chef creativo ed appassionato.</p>
+        <p>Dopo aver condiviso un percorso professionale in Spagna, sono tornati sul lungomare toscano per proporre una cucina di pesce sincera, equilibrata ed emozionante, affiancata da una pizzeria artigianale cotta rigorosamente nel forno a legna.</p>
+    </section>
+
+    <section class="menu-preview">
+        <h2 class="section-title">Dalla Nostra Carta</h2>
+        <div class="menu-grid">
+            
+            <!-- Cucina -->
+            <div class="menu-category">
+                <h3>I Piatti d'Autore</h3>
+                
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Tagliolino Nero con Tartare di Gambero</span>
+                        <span class="menu-item-dots"></span>
+                    </div>
+                    <p class="menu-item-desc">Pasta fresca all'uovo al nero di seppia con aglio, olio, peperoncino e gambero crudo freschissimo.</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">La Nostra Paella de Marisco</span>
+                        <span class="menu-item-dots"></span>
+                    </div>
+                    <p class="menu-item-desc">Ricca di crostacei e molluschi del Mediterraneo, preparata con calma e ripassata nel forno a legna per una crosticina perfetta.</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Polpo in Doppia Cottura alla Ligure</span>
+                        <span class="menu-item-dots"></span>
+                    </div>
+                    <p class="menu-item-desc">Polpo croccante accompagnato da stracciatella fresca, pesto artigianale, pomodorino confit e patata rotta.</p>
+                </div>
+            </div>
+
+            <!-- Pizzeria -->
+            <div class="menu-category">
+                <h3>La Pizzeria a Legna</h3>
+                
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Le Pizze Classiche e Contemporanee</span>
+                        <span class="menu-item-dots"></span>
+                    </div>
+                    <p class="menu-item-desc">Impasti leggeri ad alta idratazione, materie prime selezionate e passate nel tradizionale forno a legna.</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Focacce Farcite & Piadipizze</span>
+                        <span class="menu-item-dots"></span>
+                    </div>
+                    <p class="menu-item-desc">La nostra interpretazione croccante e personalizzabile, perfetta anche per un pranzo leggero pre-spiaggia.</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">La Selezione Cantina</span>
+                        <span class="menu-item-dots"></span>
+                    </div>
+                    <p class="menu-item-desc">Bollicine, Vermentino dei Colli di Luni, rossi locali e birre artigianali selezionate dal nostro Sommelier.</p>
+                </div>
+            </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="https://www.leggimenu.it/menu/ilmadaristorantepizzeria" target="_blank" class="btn-gold" style="color: var(--navy);">Vedi il Menù Completo</a>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>Contatti</h4>
+                <p>Telefono / WhatsApp:<br><a href="tel:+393297761212" style="font-weight: 600;">+39 329 776 1212</a></p>
